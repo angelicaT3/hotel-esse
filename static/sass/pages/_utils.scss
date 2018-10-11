@@ -1,0 +1,660 @@
+//typography
+@font-face {
+    font-family: 'Sofia Pro Regular';
+    src: url("../fonts/Sofia-Pro-Regular.otf");
+}
+
+$Sofia-Pro-Regular: 'Sofia Pro Regular';
+
+@font-face {
+    font-family: 'Sofia Pro Medium';
+    src: url("../fonts/Sofia-Pro-Meduim.otf");
+}
+
+$Sofia-Pro-Medium: 'Sofia Pro Medium';
+
+@font-face {
+    font-family: 'Sofia Pro Extra Light';
+    src: url("../fonts/Sofia-Pro-Extra-Light.otf");
+}
+
+$Sofia-Pro-Extra-Light: 'Sofia Pro Extra Light';
+
+@font-face {
+    font-family: 'Sofia Pro Light';
+    src: url("../fonts/Sofia-Pro-Light.otf");
+}
+
+$Sofia-Pro-Light: 'Sofia Pro Light';
+
+// Flexbox display
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+    -webkit-box-flex: $values;
+    -moz-box-flex: $values;
+    -webkit-flex: $values;
+    -ms-flex: $values;
+    flex: $values;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+    -webkit-flex-flow: $flow;
+    -moz-flex-flow: $flow;
+    -ms-flex-flow: $flow;
+    flex-flow: $flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+@mixin flex-grow($grow) {
+    -webkit-flex-grow: $grow;
+    -moz-flex-grow: $grow;
+    -ms-flex-grow: $grow;
+    flex-grow: $grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number> 
+@mixin flex-shrink($shrink) {
+    -webkit-flex-shrink: $shrink;
+    -moz-flex-shrink: $shrink;
+    -ms-flex-shrink: $shrink;
+    flex-shrink: $shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width> 
+@mixin flex-basis($width) {
+    -webkit-flex-basis: $width;
+    -moz-flex-basis: $width;
+    -ms-flex-basis: $width;
+    flex-basis: $width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+    -ms-flex-pack: $justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch 
+@mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch 
+@mixin align-self($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+}
+
+// -----------------------------------------------------------------------------
+// Flex Grid --- (https://philipwalton.github.io/solved-by-flexbox/demos/grids/)
+// -----------------------------------------------------------------------------
+//responsive
+
+$phone-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$desktop-md-width: 1440px;
+$desktop-lg-width:1600px;
+
+@mixin mobile {
+    @media (min-width: #{$phone-width}) and (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-md-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media (min-width: #{$desktop-lg-width}) {
+        @content;
+    }
+}
+
+.flexwrap {
+    @include flex-wrap("nowrap");
+}
+
+s .grid,
+.flex {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0; // Alignment per Row
+    padding-left: 0; // Alignment per Row
+
+    &.top {
+        @include align-items(flex-start);
+    }
+
+    &.center {
+        @include align-items(center);
+    }
+
+    &.bottom {
+        @include align-items(flex-end);
+    }
+
+    &.around {
+        @include justify-content(space-around);
+    }
+
+    &.between {
+        @include justify-content(space-between);
+    }
+
+    &.middle {
+        @include justify-content(center);
+    }
+    &.to-right {
+        @include justify-content(flex-end);
+    }
+
+    &.to-left {
+        @include justify-content(flex-start);
+    }
+
+    // Equal Height
+    &.equal {
+        >.grid-cell {
+            @include flexbox();
+        }
+    }
+
+    &.with-gutter {
+        margin-left: -1rem;
+        margin-right: -1rem;
+
+        .grid-cell {
+            padding: 0 1rem;
+        }
+    }
+}
+
+// Cells
+.grid-cell {
+    flex: 1; // Alignment per Cell
+
+    &.top {
+        @include align-self(flex-start);
+    }
+
+    &.center {
+        @include align-self(center);
+    }
+
+    &.bottom {
+        @include align-self(flex-end);
+    }
+
+    &.stacked {
+        @include flex-direction(column);
+
+    }
+
+    // Cell Widths
+    &.full {
+        flex: 0 0 100%;
+    }
+
+    &.five-sixths {
+        flex: 0 0 83.3%;
+    }
+
+    &.four-fifths {
+        flex: 0 0 80%;
+    }
+
+    &.three-fourths {
+        flex: 0 0 75%;
+    }
+
+    &.two-thirds {
+        flex: 0 0 66.7%;
+    }
+
+    &.half {
+        flex: 0 0 50%;
+    }
+
+    &.third {
+        flex: 0 0 33.3%;
+    }
+
+    &.fourth {
+        flex: 0 0 25%;
+    }
+
+    &.fifth {
+        flex: 0 0 20%;
+    }
+
+    &.sixth {
+        flex: 0 0 16.66%;
+    }
+
+    //tablet
+    &.sm-full {
+        @include tablet {
+            flex: 0 0 100%;
+        }
+    }
+
+    &.sm-five-sixths {
+        @include tablet {
+            flex: 0 0 83.3%;
+        }
+    }
+
+    &.sm-four-fifths {
+        @include tablet {
+            flex: 0 0 80%;
+        }
+    }
+
+    &.sm-three-fourths {
+        @include tablet {
+            flex: 0 0 75%;
+        }
+    }
+
+    &.sm-two-thirds {
+        @include tablet {
+            flex: 0 0 66.7%;
+        }
+    }
+
+    &.sm-half {
+        @include tablet {
+            flex: 0 0 50%;
+        }
+    }
+
+    &.sm-third {
+        @include tablet {
+            flex: 0 0 33.3%;
+        }
+    }
+
+    &.sm-fourth {
+        @include tablet {
+            flex: 0 0 25%;
+        }
+    }
+
+    &.sm-fifth {
+        @include tablet {
+            flex: 0 0 20%;
+        }
+    }
+
+    &.sm-sixth {
+        @include tablet {
+            flex: 0 0 16.66%;
+        }
+    }
+
+    //mobile
+    &.xs-full {
+        @include mobile {
+            flex: 0 0 100%;
+        }
+    }
+
+    &.xs-five-sixths {
+        @include mobile {
+            flex: 0 0 83.3%;
+        }
+    }
+
+    &.xs-four-fifths {
+        @include mobile {
+            flex: 0 0 80%;
+        }
+    }
+
+    &.xs-three-fourths {
+        @include mobile {
+            flex: 0 0 75%;
+        }
+    }
+
+    &.xs-two-thirds {
+        @include mobile {
+            flex: 0 0 66.7%;
+        }
+    }
+
+    &.xs-half {
+        @include mobile {
+            flex: 0 0 50%;
+        }
+    }
+
+    &.xs-third {
+        @include mobile {
+            flex: 0 0 33.3%;
+        }
+    }
+
+    &.xs-fourth {
+        @include mobile {
+            flex: 0 0 25%;
+        }
+    }
+
+    &.xs-fifth {
+        @include mobile {
+            flex: 0 0 20%;
+        }
+    }
+
+    &.xs-sixth {
+        @include mobile {
+            flex: 0 0 16.66%;
+        }
+    }
+}
+
+.offset {
+    &-1 {
+        margin-left: 8.333333%;
+    }
+
+    &-2 {
+        margin-left: 16.666667%;
+    }
+
+    &-3 {
+        margin-left: 25%;
+    }
+
+    &-4 {
+        margin-left: 33.333333%;
+    }
+
+    &-5 {
+        margin-left: 41.666667%;
+    }
+
+    &-6 {
+        margin-left: 50%;
+    }
+
+    &-7 {
+        margin-left: 58.333333%;
+    }
+
+    &-8 {
+        margin-left: 66.666667%;
+    }
+
+    &-9 {
+        margin-left: 75%;
+    }
+
+    &-10 {
+        margin-left: 83.333333%;
+    }
+
+    //tablet
+    &-sm-0 {
+        @include tablet {
+            margin-left: 0;
+        }
+    }
+
+    &-sm-1 {
+        @include tablet {
+            margin-left: 8.333333%;
+        }
+    }
+
+    &-sm-2 {
+        @include tablet {
+            margin-left: 16.666667%;
+        }
+    }
+
+    &-sm-3 {
+        @include tablet {
+            margin-left: 25%;
+        }
+    }
+
+    &-sm-4 {
+        @include tablet {
+            margin-left: 33.333333%;
+        }
+    }
+
+    &-sm-5 {
+        @include tablet {
+            margin-left: 41.666667%;
+        }
+    }
+
+    &-sm-6 {
+        @include tablet {
+            margin-left: 50%;
+        }
+    }
+
+    &-sm-7 {
+        @include tablet {
+            margin-left: 58.333333%;
+        }
+    }
+
+    &-sm-8 {
+        @include tablet {
+            margin-left: 66.666667%;
+        }
+    }
+
+    &-sm-9 {
+        @include tablet {
+            margin-left: 75%;
+        }
+    }
+
+    &-sm-10 {
+        @include tablet {
+            margin-left: 83.333333%;
+        }
+    }
+
+    //mobile
+    &-xs-0 {
+        @include mobile {
+            margin-left: 0;
+        }
+    }
+
+    &-xs-1 {
+        @include mobile {
+            margin-left: 8.333333%;
+        }
+    }
+
+    &-xs-2 {
+        @include mobile {
+            margin-left: 16.666667%;
+        }
+    }
+
+    &-xs-3 {
+        @include mobile {
+            margin-left: 25%;
+        }
+    }
+
+    &-xs-4 {
+        @include mobile {
+            margin-left: 33.333333%;
+        }
+    }
+
+    &-xs-5 {
+        @include mobile {
+            margin-left: 41.666667%;
+        }
+    }
+
+    &-xs-6 {
+        @include mobile {
+            margin-left: 50%;
+        }
+    }
+
+    &-xs-7 {
+        @include mobile {
+            margin-left: 58.333333%;
+        }
+    }
+
+    &-xs-8 {
+        @include mobile {
+            margin-left: 66.666667%;
+        }
+    }
+
+    &-xs-9 {
+        @include mobile {
+            margin-left: 75%;
+        }
+    }
+
+    &-xs-10 {
+        @include mobile {
+            margin-left: 83.333333%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ampstart-sidebar-header {
+    line-height: 3.5em;
+    min-height: 3.5em;
+}
+
+.bold {
+    font-weight: 700
+}
+
+.ampstart-title-sm {
+    font-size: 1.3125em;
+    line-height: 2.0625;
+    letter-spacing: .06em
+}

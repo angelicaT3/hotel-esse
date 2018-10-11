@@ -1,0 +1,1286 @@
+@font-face {
+  font-family: 'Sofia Pro Regular';
+  src: url("../fonts/Sofia-Pro-Regular.otf");
+}
+@font-face {
+  font-family: 'Sofia Pro Medium';
+  src: url("../fonts/Sofia-Pro-Meduim.otf");
+}
+@font-face {
+  font-family: 'Sofia Pro Extra Light';
+  src: url("../fonts/Sofia-Pro-Extra-Light.otf");
+}
+@font-face {
+  font-family: 'Sofia Pro Light';
+  src: url("../fonts/Sofia-Pro-Light.otf");
+}
+/* line 199, ../sass/pages/_utils.scss */
+.flexwrap {
+  -webkit-flex-wrap: "nowrap";
+  -moz-flex-wrap: "nowrap";
+  -ms-flex-wrap: "nowrap";
+  flex-wrap: "nowrap";
+}
+
+/* line 203, ../sass/pages/_utils.scss */
+s .grid,
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+/* line 212, ../sass/pages/_utils.scss */
+s .grid.top,
+.flex.top {
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+}
+/* line 216, ../sass/pages/_utils.scss */
+s .grid.center,
+.flex.center {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+/* line 220, ../sass/pages/_utils.scss */
+s .grid.bottom,
+.flex.bottom {
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+}
+/* line 224, ../sass/pages/_utils.scss */
+s .grid.around,
+.flex.around {
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: space-around;
+}
+/* line 228, ../sass/pages/_utils.scss */
+s .grid.between,
+.flex.between {
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+}
+/* line 232, ../sass/pages/_utils.scss */
+s .grid.middle,
+.flex.middle {
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+/* line 235, ../sass/pages/_utils.scss */
+s .grid.to-right,
+.flex.to-right {
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  -ms-flex-pack: flex-end;
+}
+/* line 239, ../sass/pages/_utils.scss */
+s .grid.to-left,
+.flex.to-left {
+  -webkit-justify-content: flex-start;
+  -moz-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -ms-flex-pack: flex-start;
+}
+/* line 245, ../sass/pages/_utils.scss */
+s .grid.equal > .grid-cell,
+.flex.equal > .grid-cell {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 250, ../sass/pages/_utils.scss */
+s .grid.with-gutter,
+.flex.with-gutter {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+/* line 254, ../sass/pages/_utils.scss */
+s .grid.with-gutter .grid-cell,
+.flex.with-gutter .grid-cell {
+  padding: 0 1rem;
+}
+
+/* line 261, ../sass/pages/_utils.scss */
+.grid-cell {
+  flex: 1;
+}
+/* line 264, ../sass/pages/_utils.scss */
+.grid-cell.top {
+  -webkit-align-self: flex-start;
+  -moz-align-self: flex-start;
+  -ms-align-self: flex-start;
+  align-self: flex-start;
+}
+/* line 268, ../sass/pages/_utils.scss */
+.grid-cell.center {
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-align-self: center;
+  align-self: center;
+}
+/* line 272, ../sass/pages/_utils.scss */
+.grid-cell.bottom {
+  -webkit-align-self: flex-end;
+  -moz-align-self: flex-end;
+  -ms-align-self: flex-end;
+  align-self: flex-end;
+}
+/* line 276, ../sass/pages/_utils.scss */
+.grid-cell.stacked {
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/* line 282, ../sass/pages/_utils.scss */
+.grid-cell.full {
+  flex: 0 0 100%;
+}
+/* line 286, ../sass/pages/_utils.scss */
+.grid-cell.five-sixths {
+  flex: 0 0 83.3%;
+}
+/* line 290, ../sass/pages/_utils.scss */
+.grid-cell.four-fifths {
+  flex: 0 0 80%;
+}
+/* line 294, ../sass/pages/_utils.scss */
+.grid-cell.three-fourths {
+  flex: 0 0 75%;
+}
+/* line 298, ../sass/pages/_utils.scss */
+.grid-cell.two-thirds {
+  flex: 0 0 66.7%;
+}
+/* line 302, ../sass/pages/_utils.scss */
+.grid-cell.half {
+  flex: 0 0 50%;
+}
+/* line 306, ../sass/pages/_utils.scss */
+.grid-cell.third {
+  flex: 0 0 33.3%;
+}
+/* line 310, ../sass/pages/_utils.scss */
+.grid-cell.fourth {
+  flex: 0 0 25%;
+}
+/* line 314, ../sass/pages/_utils.scss */
+.grid-cell.fifth {
+  flex: 0 0 20%;
+}
+/* line 318, ../sass/pages/_utils.scss */
+.grid-cell.sixth {
+  flex: 0 0 16.66%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 323, ../sass/pages/_utils.scss */
+  .grid-cell.sm-full {
+    flex: 0 0 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 329, ../sass/pages/_utils.scss */
+  .grid-cell.sm-five-sixths {
+    flex: 0 0 83.3%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 335, ../sass/pages/_utils.scss */
+  .grid-cell.sm-four-fifths {
+    flex: 0 0 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 341, ../sass/pages/_utils.scss */
+  .grid-cell.sm-three-fourths {
+    flex: 0 0 75%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 347, ../sass/pages/_utils.scss */
+  .grid-cell.sm-two-thirds {
+    flex: 0 0 66.7%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 353, ../sass/pages/_utils.scss */
+  .grid-cell.sm-half {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 359, ../sass/pages/_utils.scss */
+  .grid-cell.sm-third {
+    flex: 0 0 33.3%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 365, ../sass/pages/_utils.scss */
+  .grid-cell.sm-fourth {
+    flex: 0 0 25%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 371, ../sass/pages/_utils.scss */
+  .grid-cell.sm-fifth {
+    flex: 0 0 20%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 377, ../sass/pages/_utils.scss */
+  .grid-cell.sm-sixth {
+    flex: 0 0 16.66%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 384, ../sass/pages/_utils.scss */
+  .grid-cell.xs-full {
+    flex: 0 0 100%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 390, ../sass/pages/_utils.scss */
+  .grid-cell.xs-five-sixths {
+    flex: 0 0 83.3%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 396, ../sass/pages/_utils.scss */
+  .grid-cell.xs-four-fifths {
+    flex: 0 0 80%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 402, ../sass/pages/_utils.scss */
+  .grid-cell.xs-three-fourths {
+    flex: 0 0 75%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 408, ../sass/pages/_utils.scss */
+  .grid-cell.xs-two-thirds {
+    flex: 0 0 66.7%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 414, ../sass/pages/_utils.scss */
+  .grid-cell.xs-half {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 420, ../sass/pages/_utils.scss */
+  .grid-cell.xs-third {
+    flex: 0 0 33.3%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 426, ../sass/pages/_utils.scss */
+  .grid-cell.xs-fourth {
+    flex: 0 0 25%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 432, ../sass/pages/_utils.scss */
+  .grid-cell.xs-fifth {
+    flex: 0 0 20%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 438, ../sass/pages/_utils.scss */
+  .grid-cell.xs-sixth {
+    flex: 0 0 16.66%;
+  }
+}
+
+/* line 446, ../sass/pages/_utils.scss */
+.offset-1 {
+  margin-left: 8.333333%;
+}
+/* line 450, ../sass/pages/_utils.scss */
+.offset-2 {
+  margin-left: 16.666667%;
+}
+/* line 454, ../sass/pages/_utils.scss */
+.offset-3 {
+  margin-left: 25%;
+}
+/* line 458, ../sass/pages/_utils.scss */
+.offset-4 {
+  margin-left: 33.333333%;
+}
+/* line 462, ../sass/pages/_utils.scss */
+.offset-5 {
+  margin-left: 41.666667%;
+}
+/* line 466, ../sass/pages/_utils.scss */
+.offset-6 {
+  margin-left: 50%;
+}
+/* line 470, ../sass/pages/_utils.scss */
+.offset-7 {
+  margin-left: 58.333333%;
+}
+/* line 474, ../sass/pages/_utils.scss */
+.offset-8 {
+  margin-left: 66.666667%;
+}
+/* line 478, ../sass/pages/_utils.scss */
+.offset-9 {
+  margin-left: 75%;
+}
+/* line 482, ../sass/pages/_utils.scss */
+.offset-10 {
+  margin-left: 83.333333%;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 487, ../sass/pages/_utils.scss */
+  .offset-sm-0 {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 493, ../sass/pages/_utils.scss */
+  .offset-sm-1 {
+    margin-left: 8.333333%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 499, ../sass/pages/_utils.scss */
+  .offset-sm-2 {
+    margin-left: 16.666667%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 505, ../sass/pages/_utils.scss */
+  .offset-sm-3 {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 511, ../sass/pages/_utils.scss */
+  .offset-sm-4 {
+    margin-left: 33.333333%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 517, ../sass/pages/_utils.scss */
+  .offset-sm-5 {
+    margin-left: 41.666667%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 523, ../sass/pages/_utils.scss */
+  .offset-sm-6 {
+    margin-left: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 529, ../sass/pages/_utils.scss */
+  .offset-sm-7 {
+    margin-left: 58.333333%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 535, ../sass/pages/_utils.scss */
+  .offset-sm-8 {
+    margin-left: 66.666667%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 541, ../sass/pages/_utils.scss */
+  .offset-sm-9 {
+    margin-left: 75%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* line 547, ../sass/pages/_utils.scss */
+  .offset-sm-10 {
+    margin-left: 83.333333%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 554, ../sass/pages/_utils.scss */
+  .offset-xs-0 {
+    margin-left: 0;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 560, ../sass/pages/_utils.scss */
+  .offset-xs-1 {
+    margin-left: 8.333333%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 566, ../sass/pages/_utils.scss */
+  .offset-xs-2 {
+    margin-left: 16.666667%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 572, ../sass/pages/_utils.scss */
+  .offset-xs-3 {
+    margin-left: 25%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 578, ../sass/pages/_utils.scss */
+  .offset-xs-4 {
+    margin-left: 33.333333%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 584, ../sass/pages/_utils.scss */
+  .offset-xs-5 {
+    margin-left: 41.666667%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 590, ../sass/pages/_utils.scss */
+  .offset-xs-6 {
+    margin-left: 50%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 596, ../sass/pages/_utils.scss */
+  .offset-xs-7 {
+    margin-left: 58.333333%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 602, ../sass/pages/_utils.scss */
+  .offset-xs-8 {
+    margin-left: 66.666667%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 608, ../sass/pages/_utils.scss */
+  .offset-xs-9 {
+    margin-left: 75%;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  /* line 614, ../sass/pages/_utils.scss */
+  .offset-xs-10 {
+    margin-left: 83.333333%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 622, ../sass/pages/_utils.scss */
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 628, ../sass/pages/_utils.scss */
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 635, ../sass/pages/_utils.scss */
+  .container {
+    width: 1170px;
+  }
+}
+/* line 640, ../sass/pages/_utils.scss */
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 647, ../sass/pages/_utils.scss */
+.ampstart-sidebar-header {
+  line-height: 3.5em;
+  min-height: 3.5em;
+}
+
+/* line 652, ../sass/pages/_utils.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 656, ../sass/pages/_utils.scss */
+.ampstart-title-sm {
+  font-size: 1.3125em;
+  line-height: 2.0625;
+  letter-spacing: 0.06em;
+}
+
+/* line 2, ../sass/pages/_global.scss */
+nav {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+}
+
+/* line 8, ../sass/pages/_global.scss */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+/* line 15, ../sass/pages/_global.scss */
+nav li {
+  float: left;
+}
+
+/* line 19, ../sass/pages/_global.scss */
+nav li a {
+  font-size: 14px;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 68px 32px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Sofia Pro Extra Light";
+}
+
+/* line 31, ../sass/pages/_global.scss */
+nav .logo {
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+  padding: 68px 0;
+}
+
+/* line 1, ../sass/pages/_homepage.scss */
+body {
+  background-color: #f5f5f5;
+}
+
+/* line 5, ../sass/pages/_homepage.scss */
+.hero-image {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+/* line 9, ../sass/pages/_homepage.scss */
+.hero-image:before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+}
+
+/* line 20, ../sass/pages/_homepage.scss */
+.hero-inner h1 {
+  font-family: "Sofia Pro Regular";
+  font-size: 84px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.43;
+  letter-spacing: 2.5px;
+  text-align: left;
+  color: white;
+  z-index: 999;
+  position: relative;
+  top: 400px;
+}
+
+/* line 35, ../sass/pages/_homepage.scss */
+.hero-inner h2 {
+  font-family: "Sofia Pro Extra Light";
+  font-size: 32px;
+  letter-spacing: 4px;
+  text-align: left;
+  z-index: 999;
+  color: white;
+  position: relative;
+  top: 400px;
+}
+
+/* line 46, ../sass/pages/_homepage.scss */
+.article-preview {
+  width: 389px;
+  height: 130.2px;
+  opacity: 0.7;
+  background-color: #080808;
+  z-index: 999;
+  position: relative;
+  top: 525px;
+}
+
+/* line 56, ../sass/pages/_homepage.scss */
+.article-text h6 {
+  width: 158px;
+  height: 34px;
+  font-family: "Sofia Pro Regular";
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.43;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #ffffff;
+  padding-left: 30px;
+  margin: 0px;
+  padding-top: 25px;
+}
+
+/* line 73, ../sass/pages/_homepage.scss */
+.article-text p {
+  width: 163px;
+  height: 30px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-align: left;
+  color: #b7b7b7;
+  padding-left: 30px;
+}
+
+/* line 88, ../sass/pages/_homepage.scss */
+.exquisite {
+  height: 129px;
+  opacity: 0.02;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 129px;
+  font-weight: 380px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 64.5px;
+  text-align: left;
+  color: #080808;
+  position: absolute;
+}
+
+/* line 103, ../sass/pages/_homepage.scss */
+.intro-inner {
+  padding-top: 150px;
+}
+
+/* line 107, ../sass/pages/_homepage.scss */
+.intro h2 {
+  width: 290px;
+  height: 36px;
+  font-family: "Sofia Pro Medium";
+  font-size: 36px;
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 4.19;
+  text-align: left;
+  color: #080808;
+  padding-bottom: 50px;
+}
+
+/* line 121, ../sass/pages/_homepage.scss */
+.intro p {
+  width: 536px;
+  height: 152px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #868686;
+}
+
+/* line 135, ../sass/pages/_homepage.scss */
+.intro button {
+  width: 270px;
+  height: 52px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.29;
+  letter-spacing: 2.8px;
+  text-align: left;
+  color: #080808;
+  text-transform: uppercase;
+  background-color: #f5f5f5;
+  border: solid 1px #707070;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* line 157, ../sass/pages/_homepage.scss */
+.intro-image {
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+/* line 162, ../sass/pages/_homepage.scss */
+.luxurysuites {
+  padding-top: 100px;
+}
+
+/* line 166, ../sass/pages/_homepage.scss */
+.luxurysuites-text h2 {
+  height: 36px;
+  font-family: "Sofia Pro Medium";
+  font-size: 36px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 4.19;
+  text-align: center;
+  color: #080808;
+  padding-bottom: 50px;
+}
+
+/* line 179, ../sass/pages/_homepage.scss */
+.luxurysuites-text p {
+  height: 46px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #868686;
+}
+
+/* line 192, ../sass/pages/_homepage.scss */
+.luxurysuites-image {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  width: 100vw;
+}
+
+/* line 198, ../sass/pages/_homepage.scss */
+.hotelesse h2 {
+  height: 22px;
+  font-family: "Sofia Pro Medium";
+  font-size: 22px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.86;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #080808;
+  padding-bottom: 10px;
+  z-index: 999;
+}
+
+/* line 213, ../sass/pages/_homepage.scss */
+.hotelesse p {
+  width: 333px;
+  height: 80px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #868686;
+}
+
+/* line 227, ../sass/pages/_homepage.scss */
+.our-events {
+  padding-top: 100px;
+}
+
+/* line 231, ../sass/pages/_homepage.scss */
+.our-events-text h2 {
+  height: 36px;
+  font-family: "Sofia Pro Medium";
+  font-size: 36px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 4.19;
+  text-align: center;
+  color: #080808;
+  padding-bottom: 50px;
+}
+
+/* line 245, ../sass/pages/_homepage.scss */
+.our-events-text p {
+  height: 46px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #868686;
+  padding-bottom: 100px;
+}
+
+/* line 259, ../sass/pages/_homepage.scss */
+.inner-text h2 {
+  width: 396px;
+  height: 42px;
+  font-family: "Sofia Pro Medium";
+  font-size: 42px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.6;
+  letter-spacing: 1.3px;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* line 273, ../sass/pages/_homepage.scss */
+.inner-text p {
+  width: 470px;
+  height: 152px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #d9d9d9;
+}
+
+/* line 287, ../sass/pages/_homepage.scss */
+.fa {
+  padding: 0;
+  width: 50px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  z-index: 999;
+  top: 600px;
+}
+
+/* line 297, ../sass/pages/_homepage.scss */
+.page-footer {
+  padding-top: 150px;
+  background-color: #212020;
+  margin-top: -10px;
+}
+
+/* line 304, ../sass/pages/_homepage.scss */
+input[type=text], select {
+  font-family: "Sofia Pro Extra Light";
+  width: 260px;
+  height: 52px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* line 315, ../sass/pages/_homepage.scss */
+input[type=submit] {
+  font-family: "Sofia Pro Medium";
+  width: 159  px;
+  height: 52px;
+  background-color: #080808;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+/* line 328, ../sass/pages/_homepage.scss */
+.input-form {
+  padding-top: 25px;
+}
+
+/* line 332, ../sass/pages/_homepage.scss */
+.footer-logo {
+  margin: 0;
+  padding: 0;
+  z-index: 999;
+  padding-top: 30px;
+}
+
+/* line 339, ../sass/pages/_homepage.scss */
+.footer-text h4 {
+  height: 32px;
+  font-family: "Sofia Pro Regular";
+  font-size: 23px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* line 352, ../sass/pages/_homepage.scss */
+.footer-text-p {
+  width: 305px;
+  height: 83px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #868686;
+}
+
+/* line 366, ../sass/pages/_homepage.scss */
+.footer-text2 h4 {
+  height: 32px;
+  font-family: "Sofia Pro Regular";
+  font-size: 23px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #ffffff;
+  padding-left: 20px;
+}
+
+/* line 380, ../sass/pages/_homepage.scss */
+.footer-text1 h4 {
+  width: 404px;
+  height: 32px;
+  font-family: "Sofia Pro Regular";
+  font-size: 23px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* line 394, ../sass/pages/_homepage.scss */
+.footer-text1 h5 {
+  width: 127px;
+  height: 16px;
+  font-family: "Sofia Pro Medium";
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #868686;
+}
+
+/* line 407, ../sass/pages/_homepage.scss */
+.footer-text p {
+  width: 305px;
+  height: 83px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #868686;
+}
+
+/* line 421, ../sass/pages/_homepage.scss */
+.footer-text ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+/* line 428, ../sass/pages/_homepage.scss */
+.footer-text li a {
+  font-size: 16px;
+  display: block;
+  color: white;
+  text-align: right;
+  padding-left: 200px;
+  padding-bottom: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Sofia Pro Extra Light";
+}
+
+/* line 440, ../sass/pages/_homepage.scss */
+.footer-text1 {
+  width: 0px;
+}
+
+/* line 444, ../sass/pages/_homepage.scss */
+.footer-end p {
+  font-family: "Sofia Pro Extra Light";
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: #868686;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0;
+}
+
+/* line 458, ../sass/pages/_homepage.scss */
+hr {
+  width: 100%;
+  height: 0;
+  border: solid .5px #363636;
+  margin-top: 170px;
+}
+
+/* line 465, ../sass/pages/_homepage.scss */
+.img-crew {
+  margin: 0;
+}
+/* line 467, ../sass/pages/_homepage.scss */
+.img-crew:before {
+  content: "";
+  background-image: linear-gradient(271deg, rgba(0, 0, 0, 0.78), rgba(84, 84, 84, 0));
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+}
+
+/* line 479, ../sass/pages/_homepage.scss */
+.crew-text {
+  position: absolute;
+  top: 135px;
+}
+
+/* line 484, ../sass/pages/_homepage.scss */
+.crew-text h2 {
+  height: 42px;
+  font-family: "Sofia Pro Medium";
+  font-size: 42px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 3.6;
+  letter-spacing: 1.3px;
+  text-align: left;
+  color: #ffffff;
+  z-index: 999;
+  position: relative;
+  padding-top: 10px;
+}
+
+/* line 500, ../sass/pages/_homepage.scss */
+.crew-text p {
+  width: 470px;
+  height: 152px;
+  font-family: "Sofia Pro Extra Light";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.88;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #d9d9d9;
+  z-index: 999;
+  position: relative;
+  padding-top: 50px;
+}
+
+/* line 517, ../sass/pages/_homepage.scss */
+.crew-sec {
+  padding-top: 100px;
+}
+
+/* line 521, ../sass/pages/_homepage.scss */
+.ampstart-sidebar {
+  background-color: #fff;
+  color: #021425;
+  min-width: 300px;
+  width: 300px;
+}
+
+/* line 528, ../sass/pages/_homepage.scss */
+.px3 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 40rem) {
+  /* line 534, ../sass/pages/_homepage.scss */
+  .xs-hide {
+    display: none;
+  }
+}
+@media (min-width: 40.06rem) and (max-width: 52rem) {
+  /* line 540, ../sass/pages/_homepage.scss */
+  .sm-hide {
+    display: none;
+  }
+}
+@media (min-width: 52.06rem) and (max-width: 64rem) {
+  /* line 546, ../sass/pages/_homepage.scss */
+  .md-hide {
+    display: none;
+  }
+}
+@media (min-width: 64.06rem) {
+  /* line 552, ../sass/pages/_homepage.scss */
+  .lg-hide {
+    display: none;
+  }
+}
+/* line 557, ../sass/pages/_homepage.scss */
+.fle-x {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 563, ../sass/pages/_homepage.scss */
+.ampstart-sidebar-header {
+  line-height: 3.5rem;
+  min-height: 3.5rem;
+}
+
+/* line 568, ../sass/pages/_homepage.scss */
+.ampstart-navbar-trigger {
+  line-height: 3.5rem;
+  font-size: 1.625rem;
+}
+
+/* line 573, ../sass/pages/_homepage.scss */
+.ampstart-sidebar-nav > ul > li:first-child {
+  margin-bottom: 0;
+}
+
+/* line 577, ../sass/pages/_homepage.scss */
+.list-reset {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 582, ../sass/pages/_homepage.scss */
+.m0 {
+  margin: 0;
+}
+
+/* line 586, ../sass/pages/_homepage.scss */
+.p0 {
+  padding: 0;
+}
+
+/* line 590, ../sass/pages/_homepage.scss */
+.ampstart-label {
+  line-height: 2.0625;
+}
+
+/* line 594, ../sass/pages/_homepage.scss */
+.ampstart-nav-item {
+  font-family: Inconsolata,verdana,sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* line 600, ../sass/pages/_homepage.scss */
+.land-see-sidebar-nav-item {
+  font-family: Montserrat,arial,sans-serif;
+  color: #021425;
+  text-transform: capitalize;
+  letter-spacing: .6px;
+  line-height: 2.0625;
+}
+
+/* line 608, ../sass/pages/_homepage.scss */
+.ampstart-title-sm {
+  font-size: 1.3125rem;
+  line-height: 2.0625;
+  letter-spacing: 0.06rem;
+}
+
+/* line 614, ../sass/pages/_homepage.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 618, ../sass/pages/_homepage.scss */
+.ampstart-nav-dropdown {
+  padding-bottom: 0.75rem;
+}
+
+/* line 622, ../sass/pages/_homepage.scss */
+.ampstart-dropdown > section > header:after {
+  display: inline-block;
+  content: "+";
+  padding: 0 0 0 1.5rem;
+  color: #808992;
+}
+
+/* line 629, ../sass/pages/_homepage.scss */
+.ampstart-dropdown-items > li:last-child {
+  margin-bottom: 1rem;
+}
+
+/* line 633, ../sass/pages/_homepage.scss */
+.ampstart-dropdown-item {
+  font: 400 .9375rem/2.5rem Inconsolata,verdana,sans-serif;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
+/* line 639, ../sass/pages/_homepage.scss */
+.text-decoration-none {
+  text-decoration: none;
+}
